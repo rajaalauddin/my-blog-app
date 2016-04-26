@@ -1,0 +1,31 @@
+@import helper._
+@(form: Form[Application.Login])
+
+@if(flash.contains("success")) {
+    <p class="success">
+        @flash.get("success")
+    </p>
+}
+
+@main("Please Login") {
+    @helper.form(routes.Application.authenticate, 'id -> "myForm") {
+    @CSRF.formField
+    <div class="row column login-form">
+        <h1>Sign in</h1>
+        @if(form.hasGlobalErrors) {
+            <p class="error">
+                @form.globalError.message
+            </p>
+        }
+        <p>
+        	@helper.inputText(form("email"), 'type -> "email", 'placeholder -> "email")
+        </p>
+        <p>
+        	@helper.inputText(form("password"), 'type -> "password", 'placeholder -> "password")
+        </p>
+        <p>
+        	<button type="submit" class="button">Login</button>
+        </p>
+    </div>
+    }
+}

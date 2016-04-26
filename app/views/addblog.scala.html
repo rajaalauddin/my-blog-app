@@ -1,0 +1,12 @@
+@import helper._
+@(blogForm: Form[Blog])
+@helper.form(action = routes.BlogController.saveBlog()) {
+	@CSRF.formField
+	@helper.inputText(blogForm("header"))
+	<textarea name="text"></textarea>
+	<input type="submit" value="Post blog" />
+}
+
+<script src="//code.jquery.com/jquery-2.2.2.min.js"></script>
+<script src="//cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+<script src="@routes.Assets.versioned("javascripts/blogEditor.js")"></script>

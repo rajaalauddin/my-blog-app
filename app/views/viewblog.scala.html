@@ -1,0 +1,7 @@
+@(blog: Blog)
+
+@main("Welcome to Play") {
+	<p>Created: @blog.getCreatedDate()</p>
+	<h1>@blog.getHeader()</h1>
+	@Html(blog.getText())
+}

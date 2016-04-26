@@ -1,0 +1,19 @@
+button {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.btn-view {
+  padding: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  background: #ccc;
+  font-size: .8em;
+  width: 50px;
+  display: inline-block;
+  text-align: center;
+
+  &a:visited {
+    color: #000;
+  }
+}

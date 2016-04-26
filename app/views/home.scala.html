@@ -1,0 +1,15 @@
+@(allBlogs: List[Blog])
+
+@main("Selamat Datang") {
+    <div class="row">
+        @for(blog <- allBlogs) {
+            <h3>@blog.getHeader()</h3>
+            <h6>@blog.getFormattedDate()</h6>
+            <div class="blogpost-preview">
+                <p>
+                    @blog.getText()
+                </p>
+            </div>
+    	}
+    </div>
+}

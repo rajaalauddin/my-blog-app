@@ -1,0 +1,28 @@
+@(allBlogs: List[Blog])
+
+@main("Welcome to Play") {
+	<table class="manage-blog-table">
+		<tr>
+			<td>
+				No
+			</td>
+			<td>
+				Title
+			</td>
+			<td>
+				Actions
+			</td>
+		</tr>
+		@for(blog <- allBlogs) {
+	  <tr>
+			<td>
+				1
+			</td>
+	  	<td>@blog.getHeader()</td>
+			<td>
+				<a class="btn-view" href="/blog/@{blog.getId()}">View</a>
+			</td>
+	  </tr>
+		}
+	</table>
+}

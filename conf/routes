@@ -1,0 +1,19 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.BlogController.home()
+GET		/login						controllers.Application.login()
+GET		/logout						controllers.Application.logout()
+POST	/login						controllers.Application.authenticate()
+GET		/blog/add					controllers.BlogController.addBlog()
+GET		/blog/$id<[0-9]+> 					controllers.BlogController.viewBlog(id: Long)
+GET		/blog/manage					controllers.BlogController.manageBlog()
+GET		/blog/edit/:id				controllers.BlogController.editBlog(id: Long)
+POST	/blog/save					controllers.BlogController.saveBlog()
+POST	/blog/update/:id					controllers.BlogController.updateBlog(id: Long)
+GET		/blog/delete/:id			controllers.BlogController.deleteBlog(id: Long)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file)

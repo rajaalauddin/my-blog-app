@@ -1,0 +1,10 @@
+@import helper._
+@(blogForm: Form[Blog], curBlog: Blog)
+
+@helper.form(action = routes.BlogController.updateBlog(curBlog.getId())) {
+	@CSRF.formField
+	<input type="hidden" name="id" value="@curBlog.getId()" />
+	@helper.inputText(blogForm("header").copy(value=Some(curBlog.getHeader())))
+	@helper.inputText(blogForm("text").copy(value=Some(curBlog.getText())))
+	<input type="submit" value="Post blog" />
+}
